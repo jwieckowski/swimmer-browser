@@ -4,14 +4,30 @@
       <div class="label rounded">Swimmers list</div>
       <div class="results-table">
         <b-list-group>
-          <b-list-group-item class="list-item">Swimmer 1</b-list-group-item>
-          <b-list-group-item class="list-item">Swimmer 2</b-list-group-item>
-          <b-list-group-item class="list-item">Swimmer 3</b-list-group-item>
-          <b-list-group-item class="list-item">Swimmer 4</b-list-group-item>
-          <b-list-group-item class="list-item">Swimmer 5</b-list-group-item>
-          <b-list-group-item class="list-item">Swimmer 6</b-list-group-item>
-          <b-list-group-item class="list-item">Swimmer 7</b-list-group-item>
-          <b-list-group-item class="list-item">Swimmer 8</b-list-group-item>
+          <router-link to="/details/1">
+            <b-list-group-item class="list-item">Swimmer 1</b-list-group-item> 
+          </router-link>
+          <router-link to="/details/2">
+            <b-list-group-item class="list-item">Swimmer 2</b-list-group-item> 
+          </router-link>
+          <router-link to="/details/3">
+            <b-list-group-item class="list-item">Swimmer 3</b-list-group-item> 
+          </router-link>
+          <router-link to="/details/4">
+            <b-list-group-item class="list-item">Swimmer 4</b-list-group-item> 
+          </router-link>
+          <router-link to="/details/5">
+            <b-list-group-item class="list-item">Swimmer 5</b-list-group-item> 
+          </router-link>
+          <router-link to="/details/6">
+            <b-list-group-item class="list-item">Swimmer 6</b-list-group-item> 
+          </router-link>
+          <router-link to="/details/7">
+            <b-list-group-item class="list-item">Swimmer 7</b-list-group-item> 
+          </router-link>
+          <router-link to="/details/8">
+            <b-list-group-item class="list-item">Swimmer 8</b-list-group-item> 
+          </router-link>
         </b-list-group>
       </div>
     </div>
@@ -92,6 +108,7 @@ export default {
 
 .list-item {
   text-align: start;
+  color: initial;
 }
 
 .list-item-time {

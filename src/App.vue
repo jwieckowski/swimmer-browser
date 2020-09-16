@@ -1,13 +1,10 @@
 <template>
   <div id="app">
     <header>
-      <span>Swimmers Browser</span>
+      <my-header></my-header>
     </header>
     <main>
-      <!-- <home-page></home-page> -->
-      <!-- <filter-content></filter-content> -->
-      <!-- <results></results> -->
-      <swimmer-details></swimmer-details>
+      <router-view></router-view>
     </main>
     <footer>
       <my-footer></my-footer>
@@ -17,18 +14,21 @@
 
 <script>
 
+import MyHeader from './components/MyHeader'
+import MyFooter from './components/MyFooter'
+
 import FilterContent from './components/FilterContent'
 import HomePage from './components/HomePage'
-import MyFooter from './components/MyFooter'
 import Results from './components/Results'
 import SwimmerDetails from './components/SwimmerDetails'
 
 export default {
   name: 'app',
   components: {
+    MyHeader,
+    MyFooter,
     HomePage,
     FilterContent,
-    MyFooter,
     Results,
     SwimmerDetails
   }

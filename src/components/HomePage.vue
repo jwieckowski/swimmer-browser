@@ -13,7 +13,7 @@
         </template>
       </b-input-group>
       <div class="advanced-filters">
-        <b-link href="#">{{advanced}}</b-link>
+        <router-link to="/filters">{{advanced}}</router-link>
       </div>
     </div>
   </div>

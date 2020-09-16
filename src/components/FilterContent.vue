@@ -1,27 +1,31 @@
 <template>
   <div class="filter-content">
-    <div class="logo">
+    <div class="filter-logo">
       <h1>{{logo}}</h1>
     </div>
-    <div class="input-row">
-      <b-form-input v-model="name" class="big-input" placeholder="Enter your name"></b-form-input>
-      <b-form-input v-model="text" class="small-input" placeholder="Age"></b-form-input>
-      <b-form-input v-model="text" class="small-input" placeholder="Sex"></b-form-input>
-    </div>
-    <div class="input-row">
-      <div class="big-input invisible"></div>
-      <b-form-input v-model="text" class="small-input" placeholder="Season"></b-form-input>
-      <b-form-input v-model="text" class="small-input" placeholder="Pool type"></b-form-input>
-    </div>
-    <div class="input-row">
-      <div class="big-input invisible"></div>
-      <b-form-input v-model="text" class="small-input" placeholder="Distance"></b-form-input>
-      <b-form-input v-model="text" class="small-input" placeholder="Style"></b-form-input>
-    </div>
-    <div class="input-row">
-      <div class="big-input invisible"></div>
-      <div class="small-input invisible"></div>
-      <b-button class="small-input" variant="primary">Search</b-button>
+    <div class="filter-container">
+      <div class="input-row">
+        <b-form-input v-model="name" class="big-input" placeholder="Enter your name"></b-form-input>
+        <b-form-input v-model="text" class="small-input" placeholder="Age"></b-form-input>
+        <b-form-input v-model="text" class="small-input" placeholder="Sex"></b-form-input>
+      </div>
+      <div class="input-row">
+        <div class="big-input invisible"></div>
+        <b-form-input v-model="text" class="small-input" placeholder="Season"></b-form-input>
+        <b-form-input v-model="text" class="small-input" placeholder="Pool type"></b-form-input>
+      </div>
+      <div class="input-row">
+        <div class="big-input invisible"></div>
+        <b-form-input v-model="text" class="small-input" placeholder="Distance"></b-form-input>
+        <b-form-input v-model="text" class="small-input" placeholder="Style"></b-form-input>
+      </div>
+      <div class="input-row">
+        <div class="big-input invisible"></div>
+        <div class="small-input invisible"></div>
+        <router-link class="link small-input" to="/results">
+          <b-button class="submit-button" variant="primary">Search</b-button>
+        </router-link>
+      </div>
     </div>
   </div>
 </template>
@@ -68,8 +72,16 @@ export default {
   justify-content: center;
 }
 
-.logo {
-  height: 20%;
+.filter-logo {
+  height: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.filter-container {
+  height: 60%;
+  width: 100%;
 }
 
 .input-row {
@@ -89,6 +101,14 @@ export default {
 
 .small-input {
   width: 15%;
+}
+
+.link {
+  color: inherit;
+}
+
+.submit-button {
+  width: 100%;
 }
 
 </style>
