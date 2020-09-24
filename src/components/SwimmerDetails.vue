@@ -16,10 +16,10 @@
     <div class="results-place">
       <div>
         <b-input-group>
-          <b-form-select v-model="selected" :options="options"></b-form-select>
-          <b-form-select v-model="selected" :options="options"></b-form-select>
-          <b-form-select v-model="selected" :options="options"></b-form-select>
-          <b-form-select v-model="selected" :options="options"></b-form-select>
+          <b-form-select v-model="selectedSeason" :options="optionsSeason"></b-form-select>
+          <b-form-select v-model="selectedPoolType" :options="optionsPoolType"></b-form-select>
+          <b-form-select v-model="selectedStyle" :options="optionsStyle"></b-form-select>
+          <b-form-select v-model="selectedDistance" :options="optionsDistance"></b-form-select>
         </b-input-group>
       </div>
       <div class="results-table">
@@ -64,13 +64,37 @@ export default {
   data () {
     return {
       logo: 'Find a swimmer',
-      selected: null,
-      options: [
-        { value: null, text: 'Please select an option' },
-        { value: 'a', text: 'This is First option' },
-        { value: 'b', text: 'Selected Option' },
-        { value: { C: '3PO' }, text: 'This is an option with object value' },
-        { value: 'd', text: 'This one is disabled', disabled: true }
+      selectedSeason: null,
+      optionsSeason: [
+        { value: null, text: 'Season' },
+        { value: 2015, text: '2015' },
+        { value: 2016, text: '2016' },
+        { value: 2017, text: '2017' }
+      ],
+      selectedPoolType: null,
+      optionsPoolType: [
+        { value: null, text: 'Pool type' },
+        { value: 'SC', text: 'SC' },
+        { value: 'LC', text: 'LC' }
+      ],
+      selectedStyle: null,
+      optionsStyle: [
+        { value: null, text: 'Style' },
+        { value: 'Freestyle', text: 'Freestyle' },
+        { value: 'Backstroke', text: 'Backstroke' },
+        { value: 'Breaststroke', text: 'Breaststroke' },
+        { value: 'Butterfly', text: 'Butterfly' },
+        { value: 'Medley', text: 'Medley' }
+      ],
+      selectedDistance: null,
+      optionsDistance: [
+        { value: null, text: 'Distance' },
+        { value: 50, text: '50' },
+        { value: 100, text: '100' },
+        { value: 200, text: '200' },
+        { value: 400, text: '400' },
+        { value: 800, text: '800' },
+        { value: 1500, text: '1500' }
       ]
     }
   }

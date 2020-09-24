@@ -7,9 +7,11 @@
       <b-input-group>
         <b-form-input v-model="name" placeholder="Enter swimmer name"></b-form-input>    
         <template v-slot:append>
-          <b-button variant="primary">
-            <b-icon icon="search" font-scale="1"></b-icon>
-          </b-button>
+          <router-link to="/results">
+            <b-button v-on:click="filterSwimmers(name)" variant="primary">
+              <b-icon icon="search" font-scale="1"></b-icon>
+            </b-button>
+          </router-link>
         </template>
       </b-input-group>
       <div class="advanced-filters">
@@ -20,6 +22,8 @@
 </template>
 
 <script>
+import allSwimmers from '../assets/all_swimmers.json'
+
 export default {
   name: 'home-page',
   data () {
@@ -27,6 +31,11 @@ export default {
       logo: 'Find a swimmer',
       advanced: 'Advanced filters',
       name: ''
+    }
+  },
+  methods: {
+    filterSwimmers: function (name) {
+      console.log(allSwimmers.filter(swimmer => swimmer.name.toLowerCase().includes(name.toLowerCase())))
     }
   }
 }

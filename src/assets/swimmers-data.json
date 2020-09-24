@@ -1,0 +1,66 @@
+[
+    {
+        "id": 1,
+        "name": "Patryk Adamczyk",
+        "year": 1997,
+        "sex": "M",
+        "times": [
+            {
+                "distance": "50",
+                "style": "Butterfly",
+                "time": "25.54",
+                "date": "11 Jul 2015",
+                "season": "2015",
+                "pool-type": "LC"
+            },
+            {
+                "distance": "100",
+                "style": "Butterfly",
+                "time": "55.45",
+                "date": "11 Jul 2015",
+                "season": "2015",
+                "pool-type": "LC"
+            },
+            {
+                "distance": "200",
+                "style": "Butterfly",
+                "time": "1:58.99",
+                "date": "12 Jul 2015",
+                "season": "2015",
+                "pool-type": "LC"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Michał Biaduń",
+        "year": 1998,
+        "sex": "M",
+        "times": [
+            {
+                "distance": "50",
+                "style": "Butterfly",
+                "time": "26.23",
+                "date": "11 Jul 2015",
+                "season": "2015",
+                "pool-type": "LC"
+            },
+            {
+                "distance": "100",
+                "style": "Butterfly",
+                "time": "57.87",
+                "date": "11 Jul 2015",
+                "season": "2015",
+                "pool-type": "LC"
+            },
+            {
+                "distance": "200",
+                "style": "Butterfly",
+                "time": "2:04.12",
+                "date": "12 Jul 2015",
+                "season": "2015",
+                "pool-type": "LC"
+            }
+        ]
+    }
+]

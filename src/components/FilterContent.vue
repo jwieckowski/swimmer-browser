@@ -5,41 +5,50 @@
     </div>
     <div class="filter-container">
       <div class="input-row">
-        <b-form-input v-model="name" class="big-input" placeholder="Enter your name"></b-form-input>
-        <b-form-input v-model="text" class="small-input" placeholder="Age"></b-form-input>
-        <b-form-input v-model="text" class="small-input" placeholder="Sex"></b-form-input>
+        <b-form-input v-model="name" class="big-input" placeholder="Enter swimmer name"></b-form-input>
+        <b-form-select v-model="selectedYear" class="small-input" :options="optionsYear"></b-form-select>
+        <b-form-select v-model="selectedGender" class="small-input" :options="optionsGender"></b-form-select>
       </div>
       <div class="input-row">
         <div class="big-input invisible"></div>
-        <b-form-input v-model="text" class="small-input" placeholder="Season"></b-form-input>
-        <b-form-input v-model="text" class="small-input" placeholder="Pool type"></b-form-input>
+        <b-form-select v-model="selectedSeason" class="small-input" :options="optionsSeason"></b-form-select>
+        <b-form-select v-model="selectedPoolType" class="small-input" :options="optionsPoolType"></b-form-select>
       </div>
       <div class="input-row">
         <div class="big-input invisible"></div>
-        <b-form-input v-model="text" class="small-input" placeholder="Distance"></b-form-input>
-        <b-form-input v-model="text" class="small-input" placeholder="Style"></b-form-input>
+        <b-form-select v-model="selectedStyle" class="small-input" :options="optionsStyle"></b-form-select>
+        <b-form-select v-model="selectedDistance" class="small-input" :options="optionsDistance"></b-form-select>
       </div>
       <div class="input-row">
         <div class="big-input invisible"></div>
         <div class="small-input invisible"></div>
-        <router-link class="link small-input" to="/results">
-          <b-button class="submit-button" variant="primary">Search</b-button>
-        </router-link>
+        <!-- <router-link class="link small-input" to="/results"> -->
+        <b-button
+          class="submit-button"
+          variant="primary"
+          v-on:click="filterSwimmers(name, selectedYear, selectedGender, selectedSeason, selectedPoolType, selectedStyle, selectedDistance)"
+        >
+          {{buttonText}}
+        </b-button>
+        <!-- </router-link> -->
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import allSwimmers from '../assets/all_swimmers.json'
+
 export default {
   name: 'filter-content',
   data () {
     return {
       logo: 'Find a swimmer',
+      buttonText: 'Search',
       name: '',
-      text: '',
-      selectedYear: 2010,
+      selectedYear: null,
       optionsYear: [
+        { value: null, text: 'Age' },
         { value: 2010, text: '2010' },
         { value: 2009, text: '2009' },
         { value: 2008, text: '2008' },
@@ -54,7 +63,58 @@ export default {
         { value: 1999, text: '1999' },
         { value: 1998, text: '1998' },
         { value: 1997, text: '1997' }
+      ],
+      selectedGender: null,
+      optionsGender: [
+        { value: null, text: 'Sex' },
+        { value: 'K', text: 'K' },
+        { value: 'M', text: 'M' }
+      ],
+      selectedSeason: null,
+      optionsSeason: [
+        { value: null, text: 'Season' },
+        { value: 2015, text: '2015' },
+        { value: 2016, text: '2016' },
+        { value: 2017, text: '2017' }
+      ],
+      selectedPoolType: null,
+      optionsPoolType: [
+        { value: null, text: 'Pool type' },
+        { value: 'SC', text: 'SC' },
+        { value: 'LC', text: 'LC' }
+      ],
+      selectedStyle: null,
+      optionsStyle: [
+        { value: null, text: 'Style' },
+        { value: 'Freestyle', text: 'Freestyle' },
+        { value: 'Backstroke', text: 'Backstroke' },
+        { value: 'Breaststroke', text: 'Breaststroke' },
+        { value: 'Butterfly', text: 'Butterfly' },
+        { value: 'Medley', text: 'Medley' }
+      ],
+      selectedDistance: null,
+      optionsDistance: [
+        { value: null, text: 'Distance' },
+        { value: 50, text: '50' },
+        { value: 100, text: '100' },
+        { value: 200, text: '200' },
+        { value: 400, text: '400' },
+        { value: 800, text: '800' },
+        { value: 1500, text: '1500' }
       ]
+    }
+  },
+  methods: {
+    filterSwimmers: function (name, year, gender, season, pool, style, distance) {
+      let filteredSwimmers = allSwimmers.filter(swimmer => swimmer.name.toLowerCase().includes(name.toLowerCase()))
+      if (year) filteredSwimmers = filteredSwimmers.filter(swimmer => parseInt(swimmer.year) === year)
+      if (gender) filteredSwimmers = filteredSwimmers.filter(swimmer => swimmer.sex === gender)
+      if (season) filteredSwimmers = filteredSwimmers.filter(swimmer => swimmer.times.some(record => parseInt(record.season) === season))
+      if (pool) filteredSwimmers = filteredSwimmers.filter(swimmer => swimmer.times.some(record => record.pool_type === pool))
+      if (style && distance) filteredSwimmers = filteredSwimmers.filter(swimmer => swimmer.times.some(record => record.style === style && parseInt(record.distance) === distance))
+      else if (style) filteredSwimmers = filteredSwimmers.filter(swimmer => swimmer.times.some(record => record.style === style))
+      else if (distance) filteredSwimmers = filteredSwimmers.filter(swimmer => swimmer.times.some(record => parseInt(record.distance) === distance))
+      console.log(filteredSwimmers)
     }
   }
 }
