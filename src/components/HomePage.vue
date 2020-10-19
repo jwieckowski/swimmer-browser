@@ -22,7 +22,6 @@
 </template>
 
 <script>
-import allSwimmers from '../assets/all_swimmers.json'
 
 export default {
   name: 'home-page',
@@ -33,9 +32,12 @@ export default {
       name: ''
     }
   },
+  created () {
+    this.$store.commit('clearFilters')
+  },
   methods: {
     filterSwimmers: function (name) {
-      console.log(allSwimmers.filter(swimmer => swimmer.name.toLowerCase().includes(name.toLowerCase())))
+      this.$store.commit('filter', name)
     }
   }
 }

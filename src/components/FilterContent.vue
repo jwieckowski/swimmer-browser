@@ -22,22 +22,21 @@
       <div class="input-row">
         <div class="big-input invisible"></div>
         <div class="small-input invisible"></div>
-        <!-- <router-link class="link small-input" to="/results"> -->
-        <b-button
-          class="submit-button"
-          variant="primary"
-          v-on:click="filterSwimmers(name, selectedYear, selectedGender, selectedSeason, selectedPoolType, selectedStyle, selectedDistance)"
-        >
-          {{buttonText}}
-        </b-button>
-        <!-- </router-link> -->
+        <router-link class="link small-input" to="/results">
+          <b-button
+            class="submit-button"
+            variant="primary"
+            v-on:click="filterSwimmers(name, selectedYear, selectedGender, selectedSeason, selectedPoolType, selectedStyle, selectedDistance)"
+          >
+            {{buttonText}}
+          </b-button>
+        </router-link>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import allSwimmers from '../assets/all_swimmers.json'
 
 export default {
   name: 'filter-content',
@@ -104,17 +103,12 @@ export default {
       ]
     }
   },
+  created () {
+    this.$store.commit('clearFilters')
+  },
   methods: {
     filterSwimmers: function (name, year, gender, season, pool, style, distance) {
-      let filteredSwimmers = allSwimmers.filter(swimmer => swimmer.name.toLowerCase().includes(name.toLowerCase()))
-      if (year) filteredSwimmers = filteredSwimmers.filter(swimmer => parseInt(swimmer.year) === year)
-      if (gender) filteredSwimmers = filteredSwimmers.filter(swimmer => swimmer.sex === gender)
-      if (season) filteredSwimmers = filteredSwimmers.filter(swimmer => swimmer.times.some(record => parseInt(record.season) === season))
-      if (pool) filteredSwimmers = filteredSwimmers.filter(swimmer => swimmer.times.some(record => record.pool_type === pool))
-      if (style && distance) filteredSwimmers = filteredSwimmers.filter(swimmer => swimmer.times.some(record => record.style === style && parseInt(record.distance) === distance))
-      else if (style) filteredSwimmers = filteredSwimmers.filter(swimmer => swimmer.times.some(record => record.style === style))
-      else if (distance) filteredSwimmers = filteredSwimmers.filter(swimmer => swimmer.times.some(record => parseInt(record.distance) === distance))
-      console.log(filteredSwimmers)
+      this.$store.commit('advancedFilter', { name, year, gender, season, pool, style, distance })
     }
   }
 }
