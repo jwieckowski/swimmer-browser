@@ -1,0 +1,236 @@
+[
+    {
+        "id": 1,
+        "style": "Freestyle",
+        "distance": "50",
+        "sex": "M"
+    },
+    {
+        "id": 2,
+        "style": "Freestyle",
+        "distance": "100",
+        "sex": "M"
+    },
+    {
+        "id": 3,
+        "style": "Freestyle",
+        "distance": "200",
+        "sex": "M"
+    },
+    {
+        "id": 4,
+        "style": "Freestyle",
+        "distance": "400",
+        "sex": "M"
+    },
+    {
+        "id": 5,
+        "style": "Freestyle",
+        "distance": "1500",
+        "sex": "M"
+    },
+    {
+        "id": 6,
+        "style": "Backstroke",
+        "distance": "50",
+        "sex": "M"
+    },
+    {
+        "id": 7,
+        "style": "Backstroke",
+        "distance": "100",
+        "sex": "M"
+    },
+    {
+        "id": 8,
+        "style": "Backstroke",
+        "distance": "200",
+        "sex": "M"
+    },
+    {
+        "id": 9,
+        "style": "Breaststroke",
+        "distance": "50",
+        "sex": "M"
+    },
+    {
+        "id": 10,
+        "style": "Breaststroke",
+        "distance": "100",
+        "sex": "M"
+    },
+    {
+        "id": 11,
+        "style": "Breaststroke",
+        "distance": "200",
+        "sex": "M"
+    },
+    {
+        "id": 12,
+        "style": "Butterfly",
+        "distance": "50",
+        "sex": "M"
+    },
+    {
+        "id": 13,
+        "style": "Butterfly",
+        "distance": "100",
+        "sex": "M"
+    },
+    {
+        "id": 14,
+        "style": "Butterfly",
+        "distance": "200",
+        "sex": "M"
+    },
+    {
+        "id": 15,
+        "style": "Medley",
+        "distance": "200",
+        "sex": "M"
+    },
+    {
+        "id": 16,
+        "style": "Medley",
+        "distance": "400",
+        "sex": "M"
+    },
+    {
+        "id": 17,
+        "style": "Freestyle Relay",
+        "distance": "4x100",
+        "sex": "M"
+    },
+    {
+        "id": 18,
+        "style": "Freestyle Relay",
+        "distance": "4x200",
+        "sex": "M"
+    },
+    {
+        "id": 19,
+        "style": "Medley Relay",
+        "distance": "4x100",
+        "sex": "M"
+    },
+    {
+        "id": 20,
+        "style": "Freestyle",
+        "distance": "50",
+        "sex": "K"
+    },
+    {
+        "id": 21,
+        "style": "Freestyle",
+        "distance": "100",
+        "sex": "K"
+    },
+    {
+        "id": 22,
+        "style": "Freestyle",
+        "distance": "200",
+        "sex": "K"
+    },
+    {
+        "id": 23,
+        "style": "Freestyle",
+        "distance": "400",
+        "sex": "K"
+    },
+    {
+        "id": 24,
+        "style": "Freestyle",
+        "distance": "800",
+        "sex": "K"
+    },
+    {
+        "id": 25,
+        "style": "Backstroke",
+        "distance": "50",
+        "sex": "K"
+    },
+    {
+        "id": 26,
+        "style": "Backstroke",
+        "distance": "100",
+        "sex": "K"
+    },
+    {
+        "id": 27,
+        "style": "Backstroke",
+        "distance": "200",
+        "sex": "K"
+    },
+    {
+        "id": 28,
+        "style": "Breaststroke",
+        "distance": "50",
+        "sex": "K"
+    },
+    {
+        "id": 29,
+        "style": "Breaststroke",
+        "distance": "100",
+        "sex": "K"
+    },
+    {
+        "id": 30,
+        "style": "Breaststroke",
+        "distance": "200",
+        "sex": "K"
+    },
+    {
+        "id": 31,
+        "style": "Butterfly",
+        "distance": "50",
+        "sex": "K"
+    },
+    {
+        "id": 32,
+        "style": "Butterfly",
+        "distance": "100",
+        "sex": "K"
+    },
+    {
+        "id": 33,
+        "style": "Butterfly",
+        "distance": "200",
+        "sex": "K"
+    },
+    {
+        "id": 34,
+        "style": "Medley",
+        "distance": "200",
+        "sex": "K"
+    },
+    {
+        "id": 35,
+        "style": "Medley",
+        "distance": "400",
+        "sex": "K"
+    },
+    {
+        "id": 36,
+        "style": "Freestyle Relay",
+        "distance": "4x100",
+        "sex": "K"
+    },
+    {
+        "id": 37,
+        "style": "Freestyle Relay",
+        "distance": "4x200",
+        "sex": "K"
+    },
+    {
+        "id": 38,
+        "style": "Medley Relay",
+        "distance": "4x100",
+        "sex": "K"
+    },
+    {
+        "id": 39,
+        "style": "Freestyle Relay",
+        "distance": "8x50",
+        "sex": "Mixed"
+    }
+]

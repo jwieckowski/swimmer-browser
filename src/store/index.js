@@ -7,7 +7,9 @@ Vue.use(Vuex)
 const store = new Vuex.Store({
   state: {
     swimmers: swimmers,
-    activeID: 1
+    activeID: 1,
+    lineUp: [],
+    lineUpInfo: {}
   },
   getters: {
     basicFilterSwimmers: (state) => (name) => {
@@ -41,6 +43,23 @@ const store = new Vuex.Store({
     },
     clearFilters (state) {
       state.swimmers = swimmers
+    },
+    setLineUp (state, lineUp) {
+      state.lineUp = lineUp.results
+        ? lineUp.results
+        : [...lineUp.results_free, ...lineUp.results_medley]
+      state.lineUpInfo = lineUp.points.length
+        ? {
+          swimmersAmount: lineUp.swimmersAmount,
+          startsAmount: lineUp.startsAmount,
+          points: lineUp.points,
+          sumPoints: lineUp.points.reduce((a, b) => a + b)
+        }
+        : {
+          swimmersAmount: lineUp.swimmersAmount,
+          startsAmount: lineUp.startsAmount,
+          sumPoints: lineUp.points
+        }
     }
   }
 })

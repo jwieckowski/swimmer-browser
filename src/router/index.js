@@ -5,6 +5,8 @@ import FilterContent from '../components/FilterContent'
 import HomePage from '../components/HomePage'
 import Results from '../components/Results'
 import SwimmerDetails from '../components/SwimmerDetails'
+import SelectionPage from '../components/SelectionPage'
+import SelectionResults from '../components/SelectionResults'
 
 Vue.use(Router)
 
@@ -29,6 +31,16 @@ export default new Router({
       path: '/details/:id',
       name: 'swimmer-details',
       component: SwimmerDetails
+    },
+    {
+      path: '/selection',
+      name: 'selection-page',
+      component: SelectionPage
+    },
+    {
+      path: '/lineup',
+      name: 'selection-results',
+      component: SelectionResults
     }
   ]
 })

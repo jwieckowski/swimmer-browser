@@ -7,6 +7,9 @@
       <router-link to="/filters">
         <b-icon class="icon" icon="ui-radios" aria-hidden="true" scale="1.25"></b-icon>
       </router-link>
+      <router-link to="/selection">
+        <b-icon class="icon" icon="columns-gap" aria-hidden="true" scale="1.25"></b-icon>
+      </router-link>
       <router-link to>
         <el-button @click="$router.back(-1)">
           <b-icon class="icon" icon="arrow90deg-left" aria-hidden="true" scale="1.25"></b-icon>

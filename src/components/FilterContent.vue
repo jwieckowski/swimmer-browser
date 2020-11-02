@@ -44,7 +44,6 @@ export default {
     return {
       logo: 'Find a swimmer',
       buttonText: 'Search',
-      name: '',
       selectedYear: null,
       optionsYear: [
         { value: null, text: 'Age' },
